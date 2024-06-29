@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+<script src="base.js"></script>
+<head>
+	<link rel="stylesheet" href="style.css">
+	
+	<style>
+		body{
+			background-color:;
+		}
+		.user_detail,select{
+				width: 250px;
+				height: 30px;
+				margin: 25px;
+				border-radius: 2px;
+				border: none;
+  				border-bottom: 2px solid #019031;	
+  				font-size: 16px;		 
+		}
+		input:hover{
+			box-shadow: 0px 0px 3px 2px green;
+		}
+		p{
+			font-size: 25px;
+			margin: 25px;
+			font-family:calibri;
+		}
+		input.submit{
+
+			width: 150;
+			height:25;
+		}
+		.detail{
+			border-collapse: collapse;
+			
+			border-color:solid black 2px;
+			background-color:white;
+			box-shadow: 5px 10px 8px #888888;
+			width:700px;
+			margin-top:10px;
+			margin-bottom:50px;
+		}
+	.gender{
+   	height:15px;
+   }
+   h4{
+   	font-size: 16px;
+	margin-left: 25px;
+	font-family:calibri;
+	color:red;
+   }
+   .btns{
+   		margin-top:20px;
+
+   }
+   .btns{
+      width: 130px;
+      height: 40px;
+      size:18px;
+      background-color:white;
+      font-size:16px;
+      border:none;
+      border-bottom: solid red 2px;
+      color:green;
+      transition: 1s;
+      margin:10px;
+   }
+    .btns:hover{
+      background-color:blue;
+      transition: 0.5s;
+      color:white;
+   }
+   fieldset{
+   		width: 800px;
+   }
+   		</style>
+      
+	</head>
+	
+<body>
+<center>
+<h1 class="form_heading">Form for Making request.</h1>
+
+	<table border="0px" class="detail">
+
+<form id="data" method="POST" name="data">
+
+	<tr id="detail">
+		<td> <p>First Name : </p></td>
+		<td> <input type="text" id = "firstname" class="user_detail" required></td>
+			</tr>
+			<tr id="detail">
+				<td> <p>Last Name : </p></td>
+				<td> <input type="text" class = "user_detail" id = "lastname" required></td>
+			</tr>
+			<tr>
+				<td> <p>Email_id :</p> </td>	
+				<td> <input type="email" class="user_detail" id="email" required>
+					
+				</td>
+			</tr>
+			<tr id="detail">
+				<td> <p>Mobile No :  </p></td>
+				<td> <input type="text" class = "user_detail" id ="mobile" required>
+				</td>
+			</tr>
+            <tr id="detail">
+				<td> <p>Address :  </p></td>
+				<td> <input type="text" id = "address" class="user_detail" required></td>
+			</tr>
+			<tr id="detail">
+				<td> <p>Descreption :  </p></td>
+				<td> <input type="text" class = "user_detail" id ="desc" required>
+					<input type="hidden" id ="status" value="In Progress..">
+				</td>
+			</tr>				
+				
+				
+			
+			<td colspan="2"> 
+				<center>
+				<input type="submit" class="btns" value="Submit" name="submit" id="submit_form" onclick="savedata();" />
+				</center>
+			</td>
+		</tr>
+	</form>
+</table>
+<a href="home.html">
+  <button class="btns">Back</button></a>
+
+
+</center>
+
+<table border="1px" align="center" id="display">
+
+	<tr>
+		<th>Request No.</th>
+		<th>Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Mobile</th>
+		<th>Address</th>
+		<th>Descreption</th>
+		<th>Request Status</th>
+	</tr>
+	
+</table>  
+
+<script type="text/javascript">
+	dispform();
+	///////////function for sending the requests data into the local storage////////////////
+
+
+ 	function savedata() {
+ 	var uid 		= Math.floor((Math.random() * 1000) + 1);
+	var firstname 	= document.getElementById("firstname").value;
+	var lastname 	= document.getElementById("lastname").value;
+	var email 		= document.getElementById("email").value;
+	var mobile 		= document.getElementById("mobile").value;
+	var address 	= document.getElementById("address").value;
+	var desc 	 	= document.getElementById("desc").value;
+	var status 	 	= document.getElementById("status").value;
+	var date		= new Date();
+	var datetime	= date.getDay() + "/" + date.getMonth() 
+						+ "/" + date.getFullYear() + " @ " 
+						+ date.getHours() + ":" 
+						+ date.getMinutes() + ":" 
+						+ date.getSeconds();
+	
+
+	if(!firstname || !lastname || !email || !mobile || !address || !desc)
+	{
+			alert("Please fill all mandatory field.");
+	}
+	else{
+	
+	var array = [
+					uid,
+					firstname,
+  					lastname,
+  					email,
+  					mobile,
+  					address,
+  					desc,
+  					status,
+  					datetime,
+  										
+				];									 
+			localStorage.setItem(uid, JSON.stringify(array));
+			var audio = "Hi, "+ firstname + " your Request has been made.\nPlease wait for our Response."; 
+			read(audio);
+			alert(audio);
+	}		
+}
+
+	function dispform(){
+				var row=1;
+				var display = document.getElementById("display");	 				
+
+			for (var i = 0; i < localStorage.length; i++) {
+ 				 key = localStorage.key(i);
+ 				 data = JSON.parse(localStorage.getItem(key));	
+
+ 				 			 			 		
+ 				 		var newRow = display.insertRow(row);
+  						var cell0 = newRow.insertCell(0);
+  						var cell1 = newRow.insertCell(1);
+  						var cell2 = newRow.insertCell(2);
+  						var cell3 = newRow.insertCell(3);
+  						var cell4 = newRow.insertCell(4);
+  						var cell5 = newRow.insertCell(5);
+  						var cell6 = newRow.insertCell(6);
+  						var cell7 = newRow.insertCell(7);
+
+  						cell0.innerHTML += data[0];
+  						cell1.innerHTML += data[1];
+  						cell2.innerHTML += data[2];
+  						cell3.innerHTML += data[3];
+  						cell4.innerHTML += data[4];
+  						cell5.innerHTML += data[5];	
+  						cell6.innerHTML += data[6];	
+  						cell7.innerHTML += data[7];  									 		
+  					
+  					row++;
+
+  			}	
+  		}
+
+ </script>
+
+
+</body>
+</html> 

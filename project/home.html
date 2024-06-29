@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="base.js"></script>
+	<title>seva.in</title>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+			.outerdiv{
+
+				position: fixed;
+				margin:-10px;
+
+			}
+			.innerdiv{
+					float: left;
+					width: 1150px;
+					height: 100px;
+					background-color: green;					
+			}
+			.innerdiv2{
+				float: right;
+                                margin-top: -7.7%;									
+			}
+			.notification {
+  			background-color:white;
+  			color: green;
+			  text-decoration: none;
+			  font-family: arial;
+  			padding: 10px 16px;
+ 			position: relative;
+			 display: inline-block;
+			 border-bottom: solid 2px red;
+			 margin: 15px;
+  			border-radius: 2px;
+			}
+
+			.notification:hover {
+			  background: blue;
+			  color:white;
+			}
+
+		.notification .badge {
+  		position: absolute;
+  		top: -10px;
+  		right: -10px;
+  		padding: 5px 10px;
+  		border-radius: 50%;
+  		background: red;
+  		color: white;
+		}
+		#help{
+  		
+			width: 135px;
+			  height: 41px;
+			  position: static ;
+      		size:18px;
+      		background-color:white;
+			font-size:16px;
+			color: green;
+      		border:none;     
+      		margin:10px;
+  		}
+		#help{
+
+
+	animation-name: helpdeco;
+  	animation-duration: 4s;
+  	animation-iteration-count: infinite;
+	}
+		@keyframes helpdeco{
+  		0% {
+			transition-duration:0.2s;
+			border:3px solid #4DD637 ;
+			
+			
+		  }
+		  25% {
+			border:3px solid red ;
+			
+			
+		  }
+		  50% {
+			border:3px solid #23C4ED ;
+			
+		  }
+		  75% {
+			border:3px solid #E03B8B;
+			
+  		}
+  	100% {
+			border:3px solid blue ;
+			
+			
+  		}
+	}
+		
+
+	</style>
+	
+</head>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body bgcolor="#EAF0F1">
+<center>
+	<div class="outerdiv">
+		
+		<div class="innerdiv">
+			<h1 class="Heading">Stay Home Save Lives.</h1>
+			
+		</div>
+
+		<div class="innerdiv2">
+				<img src="pics/senior.jpg" style="width:200px;height: 100px;" />
+		</div>
+		
+</div>
+
+	<br>	
+		<div class="panel">		
+			
+			  <a href="make_requests.html" class="notification">
+				<span>Make Requests</span>
+			<a href="requests.html" onclick='dispdata();' class="notification">
+					<span>Requests Inbox</span>
+					<span class="badge" id="notify">0</span>
+					  </a>
+				 </a>				 
+					<button onclick="read(audio);" id="help">Voice Help</button>
+							
+				</div>
+
+	<h1  style="display: none;" id="notify">some notification.</h1>
+	<fieldset style="width: 50%;">
+		<legend>How COVID-19 is sprading.</legend>
+			<video loop autoplay muted controls>
+			<source src="videoplayback.mp4" type="video/mp4">
+		  </video>
+		  
+		  
+		
+	</fieldset>
+	</center>
+	<script>
+		
+		var audio = "Hi, Welcome to requests management system.";
+		read(audio);
+		var counter = pendingstatus();
+		if(counter>0){
+				document.getElementById("notify").innerHTML= counter;}
+	</script>
+<center>
+<a href="D:\PROJECTS\home\home.html">
+  <button class="btns">Home</button></a>
+</center>
+
+<marquee><h2 style="color:red;">The best way to find youself is to lose yourself in the service of others-<b>MAHATMA GANDHI</b></marquee>
+
+
+</body>
+</html>
+
+

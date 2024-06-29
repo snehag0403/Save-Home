@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script src="base.js"></script>
+	<title>all Requests</title>
+	<style type="text/css">
+		.uidbox{
+				width: 250px;
+				height: 30px;
+				margin: 25px;
+				border-radius: 2px;
+				border:2px solid black;
+				font-size: 16px;		 
+		}
+		fieldset{
+
+			width: 50%;
+
+		}
+	h1{
+		background-color: green;
+		width: 80vw;
+		padding: 0.5vw;
+		color: white;
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	
+	}
+	
+	</style>
+</head>
+<body>
+	
+
+<center>
+	<h1 align="center" id="heading">Requests Inbox</h1>
+<fieldset>
+	<legend>Enter UID for Fulfill or Remove the request.</legend>
+	<form>
+		<label for="uidf">For Fulfill </label>		
+		<input type="text" class = "uidbox" id ="uidf" required>
+		<input type="Submit" class="btns" class = "user_detail" onclick="isavail();" />	
+	</form>
+	<form>	
+		<label for="uidr">For Remove</label>	
+		<input type="text" class = "uidbox" id ="uidr" required>
+		<input type="submit" class="btns" type="submit" class = "user_detail" onclick="isavail();" />	
+	</form>
+</fieldset>
+<br><br>
+</center>
+
+<table border="1px" align="center" id="display">
+
+	<tr>
+		<th>Request No.</th>
+		<th>Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+		<th>Mobile</th>
+		<th>Address</th>
+		<th>Descreption</th>
+		<th>Request Status</th>
+		<th>Request Date and time</th>
+		
+	</tr>
+	
+</table>
+
+<script type="text/javascript">
+	dispdata();
+</script>
+
+
+
+<center>
+	
+<a href="home.html">
+  <button class="btns">Back</button></a>
+</center>
+
+</body>
+</html>

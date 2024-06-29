@@ -1,0 +1,156 @@
+div.head{
+	background-color:green;
+	height:90px;
+	width:1363px;
+	background-size:120px 90px;
+	background-repeat: no-repeat;
+	background-position: right;
+	margin-top:-9px;
+	transition: width 2s, height 2s, transform 2s;
+	margin-left:-8px;
+	position: fixed;
+	overflow:hidden;
+	border:2px solid green;
+	}
+h1.Heading{
+	font-family:calibri;
+	font-size:50px;
+	color:white;
+	padding:10px;
+	padding-left:60px;
+	padding-left:60px;
+	text-align: left;
+	margin-top: 0px;
+	margin: auto;
+  	animation-name: spin;
+  	animation-duration: 3s;
+  	animation-iteration-count: infinite;
+}
+@keyframes spin{
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+a{
+	text-decoration:  none;
+}
+.mainheading{
+	
+	width:1270px;
+	height:90px;
+	margin-top:-9px;
+	margin-left:-9px;
+	background-color:green;
+	border-collapse: collapse;
+	position:fixed;
+	box-shadow: 5px 5px 8px #888888;
+}
+.text{
+	width:380px;
+	height:40px;
+	font-size:16px;
+	border-radius:5px;
+	border-bottom: 2px solid green;
+}
+.searchbtn{
+	  width: 120px;
+      height: 47px;
+      size:18px;
+      background-color:white;
+      margin-bottom: 10px;
+      font-size:20px;
+      border-radius: 3px;
+      border-color:green;
+      color:green;
+      transition: 1s;
+      margin-top:20px;
+}
+ .searchbtn:hover{
+      background-color:red;
+      transition: 0.5s;
+      color:white;
+      box-shadow: 0px 0px 4px 2px gray;
+   }
+.logo{
+	width:100px;
+	height:90px;
+	margin:-15px;
+	margin-bottom:-20px;
+}
+.btns{
+      width: 130px;
+      height: 40px;
+      size:18px;
+      background-color:white;
+      font-size:16px;
+      border:none;
+      border-bottom: solid red 2px;
+      color:green;
+      margin:10px;
+   }
+    .btns:hover{
+      background-color:blue;
+      color:white;
+   }
+	.buttons{
+		border-collapse: collapse;
+		margin-top: 0px;
+		margin-left: 50px; 
+		
+	} 
+	.heading{
+		background-color:red;
+		color: white;
+		padding: 10px;
+	}
+	.icon{
+		border-radius: 100px;
+		width:120px;
+		height:120px;
+		margin-right: 0px;
+	}
+	.panel{
+		width: 800px;
+		height: 100px;
+		margin-top: 70px;
+		
+	}
+
+.form_heading{
+
+	border:none; border-bottom: solid red 2px; padding-bottom: 20px; width:70%;
+
+}
+
+
+#display, td, th {
+  border: 1px solid black;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td {
+  text-align: center;
+  padding: 5px;
+}
+
+ td, th {
+  border: 1px solid black;
+  padding: 5px;
+  
+}
+tr:hover{
+	background-color: #ebeff0;	
+}
+
+
+
+
+
